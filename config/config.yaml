@@ -1,0 +1,63 @@
+# API Configuration
+api:
+  coingecko:
+    base_url: "https://pro-api.coingecko.com/api/v3"
+    api_key: "${COINGECKO_API_KEY}"  # Load from environment variable
+    rate_limit:
+      requests_per_minute: 50
+      retry_after: 60
+
+# Data Collection Settings
+data_collection:
+  market_data:
+    update_interval: 3600  # seconds
+    top_n_coins: 500
+    currencies: ["usd"]
+  
+  ohlc:
+    daily:
+      enabled: true
+      update_interval: 86400  # seconds
+      chunk_size: 180  # days
+    hourly:
+      enabled: true
+      update_interval: 3600  # seconds
+      chunk_size: 31  # days
+
+# Signal Generation Parameters
+signal_generation:
+  ema:
+    short_period: 13
+    long_period: 21
+  decay:
+    factor: 0.97
+  stablecoins:
+    - "usdt"
+    - "usdc"
+    - "usd"
+    - "dai"
+    - "busd"
+    - "tusd"
+
+# File Paths
+paths:
+  data:
+    market_caps: "data/market_caps"
+    ohlc_daily: "data/ohlc_daily"
+    ohlc_hourly: "data/ohlc_hourly"
+    market_signals: "data/market_signals"
+    progress_tracker: "data/progress_tracker.json"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"
+  file: "logs/pipeline.log"
+  max_size: "100MB"
+  rotation: "1 week"
+
+# Monitoring
+monitoring:
+  enabled: true
+  alert_email: "${ALERT_EMAIL}"  # Load from environment variable
+  failure_threshold: 3  # Number of consecutive failures before alert 
