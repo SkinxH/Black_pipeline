@@ -9,7 +9,8 @@ Created on Fri May 23 17:10:41 2025
 
 Module for logging of CoinGecko scraping.
 This script is the central place for the logging of the scraping activity from CoinGecko website;
-TODO: describe what it does.
+Creates logs both in the console and as files,
+giving the eventual possibility to rollover the log files in an automated way (with adjustable inputs).
 
 """
 
