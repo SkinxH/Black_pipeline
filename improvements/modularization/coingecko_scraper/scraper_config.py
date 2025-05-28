@@ -21,10 +21,13 @@ API_KEY = os.getenv("COINGECKO_API_KEY", "CG-q5nxd4AYP3hCaWC4GfrdRDG8") # the id
 
 HEADERS = {"x-cg-pro-api-key": API_KEY} # here we specify the header needed for authentication on CoinGecko website
 
-# defining the parameters of the request as variables (let's see if it makes sense to activate them all here)
-vs_currency = 'usd'
-#order = 'market_cap_desc'
+# defining the parameters of the request as variables
+vs_currency = 'usd' # market data currency
+order = 'market_cap_desc' # order at which cryptos are displayed
 per_page = 250 # how many cryptos per page to retrieve with the request
-request_timeout = 15 # seconds to pass by for a request timeout
-max_retries = 3 # maximum number of tentative for the request to work
-backoff_factor = 1 # exponential-backoff factor (again in seconds), it's like a time multiplier between tentatives (retries)
+request_timeout = 15 # seconds to pass by for a request timeout (an idea, up for discussion)
+max_retries = 3 # maximum number of tentative for the request to work (an idea, up for discussion)
+backoff_factor = 1 # exponential-backoff factor (again in seconds), it's like a time multiplier between tentatives (retries), (an idea, up for discussion)
+
+
+
