@@ -23,7 +23,7 @@ HEADERS = {"x-cg-pro-api-key": API_KEY} # here we specify the header needed for 
 
 # defining the parameters of the request as variables
 vs_currency = 'usd' # market data currency
-order = 'market_cap_desc' # order at which cryptos are displayed
+#order = 'market_cap_desc' # order at which cryptos are displayed
 per_page = 250 # how many cryptos per page to retrieve with the request
 request_timeout = 15 # seconds to pass by for a request timeout (an idea, up for discussion)
 max_retries = 3 # maximum number of tentative for the request to work (an idea, up for discussion)
