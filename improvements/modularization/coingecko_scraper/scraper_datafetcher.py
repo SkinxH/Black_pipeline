@@ -65,7 +65,7 @@ def scraper_fetcher(): # defining a function for retrieving market data for cryp
             break # therefore we need to exit the while loop here as well
         
         page += 1 # dynamically moving to the next page
-        time.sleep(1) # delaying the API connections by 1 second, just to make sure it doesn't get mixed up
+        time.sleep(1) # delaying the API connections by 1 second, just to make sure it doesn't get mixed up, to respect API rate limits
         
     LOGGER.info("Total number of cryptos retrieved: %d", len(data)) # once the while loop is exited, in whichever case, it might be useful to understand how many cryptos we were able to retrieve market data for
     return data
