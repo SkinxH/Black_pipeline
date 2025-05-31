@@ -54,7 +54,7 @@ class coingecko_client: # defining a class to create the client object for CoinG
         """
         
         website = f"{API_BASE}{endpoint}" # taking the website url from the variable defined in the scraper_config module and combining it with the endpoint path to produce the full URL
-        kwargs.setdefault("headers", self.headers) # authentication headers are added only if by default no headers were passed
+        kwargs.setdefault("headers", self.HEADERS) # authentication headers are added only if by default no headers were passed
         kwargs.setdefault("timeout", self.request_timeout) # as well for timeout, if no default timeout is indicated, this line adds it
         
         for tentative in range(1, max_retries + 1): # looping from 1 to the maximum number of tentatives, we have to start from the first log file instead of from zero, so the loop will end at max_retries adding 1 
